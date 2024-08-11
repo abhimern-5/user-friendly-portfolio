@@ -1,0 +1,509 @@
+/* hero background image */
+  /* Main banner styles */
+  /* Main banner styles */
+ /* Main banner styles */
+ .bgimage {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  background-color: #090228; /* Background color for ambient light effect */
+}
+
+/* Grid container for cubes */
+.grid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* Adjust perspective for 3D depth */
+}
+
+/* Grid item (cube) */
+.grid-item {
+  position: absolute;
+  width: 100px; /* Adjust cube size */
+  height: 100px; /* Adjust cube size */
+  background-image: url(''); /* Replace with cube image path */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.8), /* Glowing effect */
+              0px 0px 40px 20px rgba(255, 255, 255, 0.5); /* Ambient light effect */
+              
+              transform-style: preserve-3d;
+              transform: translate3d(0, 0, 100px);
+              transition: transform 0.5s ease-in-out;
+              backface-visibility: hidden;
+              will-change: transform;
+              z-index: 1;
+              cursor: pointer;
+              
+
+  animation: cubeAnimation 5s linear infinite alternate; /* Animation settings */
+}
+
+/* Cube animation keyframes */
+@keyframes cubeAnimation {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Additional styles for different cubes */
+.cube1 {
+  top: 20%;
+  left: 20%;
+}
+
+.cube2 {
+  top: 20%;
+  right: 20%;
+}
+
+.cube3 {
+  bottom: 20%;
+  left: 20%;
+}
+
+.cube4 {
+  bottom: 20%;
+  right: 20%;
+}
+  /*type - container*/
+
+.typed-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevent text wrap */
+  font-size: 24px; /* Default font size */
+}
+
+/* Styled spans */
+.role {
+  display: inline-block;
+  margin: 0 5px; /* Adjust spacing between spans */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+ 
+
+/* Show spans with animation */
+.show {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  /* Adjust font size for smaller screens */
+  .typed-text {
+    font-size: 18px;
+  }
+
+  /* Adjust margin for smaller screens */
+  .role {
+    margin: 0 3px;
+  }
+}
+
+/* About section image CSS */
+ 
+ 
+#image-carousel {
+  margin-bottom: 20px; /* Adjust spacing between carousel and content */
+}
+
+@media (max-width: 768px) {
+  /* Adjust carousel item height for smaller screens */
+  #image-carousel .carousel-item img {
+    height: 400px; /* Set desired height for smaller screens */
+  }
+}
+/* About section background and padding */
+#about {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+/* Skill card styles */
+.skill-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  position: relative; /* Added for pseudo-element */
+}
+
+.skill-card:hover {
+  box-shadow: 0 0 15px rgba(8, 235, 46, 0.806);
+}
+
+/* Progress container styles */
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Progress bar styles */
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff6347, #ffbb33,green); /* Gradient color */
+  transform-style: preserve-3d;
+  animation: progressAnimation 3s linear infinite alternate; /* Animation settings */
+}
+
+/* Progress bar animation keyframes */
+@keyframes progressAnimation {
+  0% {
+    transform: translateX(-100%) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(100%) rotateY(360deg);
+  }
+}
+
+/* Progress bar text */
+.progress-bar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(-90deg);
+  color: white;
+}
+
+/* Dynamic color change based on progress percentage */
+.progress-bar span::after {
+  content: attr(data-progress); /* Display the progress percentage dynamically */
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #333;
+}
+
+/* Color change effect on hover */
+.skill-card:hover .progress-bar {
+  background-color: #ff6347; /* Change to a different color on hover */
+}
+
+/* services section css */
+.servicesText.card {
+    height: 280px;
+    cursor: pointer;
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
+}
+
+/* display background color black on navbar scroll */
+.navbarScroll.navbarDark {
+    background-color: rgb(15, 4, 46);
+}
+
+/* social media icons styling */
+.social-icons {
+    font-size: 36px;
+    cursor: pointer;
+}
+.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+    color: #008000;
+}
+.fab {
+    color: #000000;
+}
+/* footer styling */
+#footer {
+    background-color: #808080;
+    text-align: center;
+}
+
+
+/* Styles for container */
+.container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Styles for top margin */
+.mt-3 {
+    margin-top: 3rem;
+}
+
+/* Styles for contact content */
+.contactContent {
+    margin-bottom: 30px; /* Example margin */
+}
+
+/* Styles for text center */
+.text-center {
+    text-align: center;
+}
+
+/* Styles for column on large screens */
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* Styles for Google Maps iframe container */
+#gmap-canvas {
+    width: 100%;
+    height: 400px; /* Example height */
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+    /* Adjust styles for smaller screens */
+    .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #gmap-canvas {
+        height: 300px; /* Example height for smaller screens */
+    }
+}
+
+ 
+
+
+/* General styles */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Section styles */
+  section {
+    padding: 60px 0;
+  }
+  
+  /* Header styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+  }
+  
+  /* Form styles */
+  form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"],
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover,
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 0;
+  }
+  
+  .footer-info {
+    margin-bottom: 30px;
+  }
+  
+  .footer-info h5 {
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons li a {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 767px) {
+    .container {
+      padding: 0 10px;
+    }
+  
+    /* Adjust form inputs and buttons */
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    button[type="submit"],
+    .btn {
+      width: 100%;
+    }
+  }
+
+
+  /* Custom styles for contact section */
+  #contact {
+    padding: 50px 0;
+}
+.contactContent {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/* Base styles */
+.panel-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 0.5s ease forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ratings-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.rating {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rating img {
+  width: 50px;
+  height: 50px;
+}
+
+.rating:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .panel-container {
+    padding: 15px;
+  }
+
+  .rating img {
+    width: 40px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .rating img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
